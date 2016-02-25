@@ -23,7 +23,7 @@ module.exports = function (grunt) {
     });
 
     var basePath = options.basePath;
-    var titleTag = /<title>/;
+    var headTag = /<head/;
     var baseTag = /<base/;
 
     // Iterate over all specified file groups.
@@ -49,12 +49,9 @@ module.exports = function (grunt) {
         var originalFileArr = originalFileContent.split(grunt.util.normalizelf('\n'));
 
         originalFileArr.forEach(function(value, index, arr){
-          if(titleTag.test(value)){
-
-            var blank = value.split("<title>")[0];
+          if(headTag.test(value)){
             arr[index] = value + 
                          grunt.util.normalizelf('\n') + 
-                         blank + 
                          '<base href="'+basePath+'">';
             return;
           }
