@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Grunt-base-tag by hongguancheng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Grunt-base-tag</h1>
+      <h2 class="project-tagline">grunt plugin，添加 base 标签</h2>
+      <a href="https://github.com/hongguancheng/grunt-base-tag" class="btn">View on GitHub</a>
+      <a href="https://github.com/hongguancheng/grunt-base-tag/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/hongguancheng/grunt-base-tag/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="grunt-base-tag" class="anchor" href="#grunt-base-tag" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>grunt-base-tag</h1>
+
+<blockquote>
+<p>add base tag</p>
+</blockquote>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>This plugin requires Grunt.</p>
+
+<p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install grunt-base-tag --save-dev</pre></div>
+
+<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">loadNpmTasks</span>(<span class="pl-s"><span class="pl-pds">'</span>grunt-base-tag<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="the-base_tag-task" class="anchor" href="#the-base_tag-task" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The "base_tag" task</h2>
+
+<h3>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>In your project's Gruntfile, add a section named <code>base_tag</code> to the data object passed into <code>grunt.initConfig()</code>.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
+  base_tag<span class="pl-k">:</span> {
+    options<span class="pl-k">:</span> {
+      <span class="pl-c">// Task-specific options go here.</span>
+    },
+    your_target<span class="pl-k">:</span> {
+      <span class="pl-c">// Target-specific file lists and/or options go here.</span>
+    },
+  },
+})</pre></div>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<h4>
+<a id="optionsseparator" class="anchor" href="#optionsseparator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.separator</h4>
+
+<p>Type: <code>String</code>
+Default value: <code>',  '</code></p>
+
+<p>A string value that is used to do something with whatever.</p>
+
+<h4>
+<a id="optionspunctuation" class="anchor" href="#optionspunctuation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.punctuation</h4>
+
+<p>Type: <code>String</code>
+Default value: <code>'.'</code></p>
+
+<p>A string value that is used to do something else with whatever else.</p>
+
+<h3>
+<a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Examples</h3>
+
+<h4>
+<a id="default-options" class="anchor" href="#default-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Options</h4>
+
+<p>In this example, the default options are used to do something with whatever. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result would be <code>Testing, 1 2 3.</code></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
+  base_tag<span class="pl-k">:</span> {
+    options<span class="pl-k">:</span> {},
+    files<span class="pl-k">:</span> {
+      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
+    },
+  },
+})</pre></div>
+
+<h4>
+<a id="custom-options" class="anchor" href="#custom-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Options</h4>
+
+<p>In this example, custom options are used to do something else with whatever else. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result in this case would be <code>Testing: 1 2 3 !!!</code></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
+  base_tag<span class="pl-k">:</span> {
+    options<span class="pl-k">:</span> {
+      separator<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>: <span class="pl-pds">'</span></span>,
+      punctuation<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span> !!!<span class="pl-pds">'</span></span>,
+    },
+    files<span class="pl-k">:</span> {
+      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
+    },
+  },
+})</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<h2>
+<a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release History</h2>
+
+<p><em>(Nothing yet)</em></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2016 CCG. Licensed under the MIT license.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/hongguancheng/grunt-base-tag">Grunt-base-tag</a> is maintained by <a href="https://github.com/hongguancheng">hongguancheng</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
