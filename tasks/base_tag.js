@@ -23,7 +23,7 @@ module.exports = function (grunt) {
     });
 
     var basePath = options.basePath;
-    var headTag = /<head/;
+    var headTag = /<head[ >]/;
     var baseTag = /<base/;
 
     // Iterate over all specified file groups.
